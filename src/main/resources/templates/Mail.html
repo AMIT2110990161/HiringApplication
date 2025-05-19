@@ -1,32 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Candidate Status Update!!</title>
+    <title>Candidate Status Update</title>
 </head>
-<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; margin: 0;">
-<div style="max-width: 600px; background-color: #ffffff; padding: 30px; margin: auto; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-    <h2 style="color: #333333;">Hello, <span th:text="${name}">Candidate</span> 👋</h2>
-
-    <p th:if="${status == 'offered'}" style="font-size: 16px; color: #28a745;">
-        🎉 Congratulations! You have received an <strong>offer</strong> from our company. We're excited to have you on board!
-    </p>
-
-    <p th:if="${status == 'rejected'}" style="font-size: 16px; color: #dc3545;">
-        😞 We regret to inform you that you have not been selected at this time. We truly appreciate the effort and interest you showed.
-    </p>
-
-    <p style="font-size: 15px; color: #555555;">
-        Thank you once again for your time and interest in our organization. We wish you all the best in your future endeavors.
-    </p>
-
-    <hr style="margin: 30px 0; border: none; border-top: 1px solid #eeeeee;">
-
-    <p style="font-size: 14px; color: #999999;">
-        Regards,<br>
-        <strong>The Talent Acquisition Team</strong><br>
-        <span style="font-size: 13px;">Cognizant Technology Solutions</span>
-    </p>
-</div>
+<body>
+<h1>Hello, <span th:text="${name}"></span>!</h1>
+<p>Your application status is: <strong th:text="${status}"></strong></p>
+<p>Thank you for applying!</p>
 </body>
 </html>
