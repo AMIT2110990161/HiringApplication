@@ -11,6 +11,7 @@ import com.learning.HiringApp.repository.UserDetailsRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class AuthService {
 
