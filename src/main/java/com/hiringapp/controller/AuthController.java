@@ -22,17 +22,18 @@ public class AuthController {
         this.authService = authService;
     }
 
+    @PostMapping("/register")
+    public ResponseEntity<RegisterResponse> register(@RequestBody @Valid final RegisterRequest registerRequest) {
+        RegisterResponse registerResponse = authService.register(registerRequest);
+        return new ResponseEntity<>(registerResponse, HttpStatus.OK);
+    }
+
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@RequestBody @Valid final AuthRequest authRequest) {
         AuthResponse authResponse = authService.login(authRequest);
         return new ResponseEntity<>(authResponse, HttpStatus.OK);
     }
 
-    @PostMapping("/register")
-    public ResponseEntity<RegisterResponse> register(@RequestBody @Valid final RegisterRequest registerRequest) {
-        RegisterResponse registerResponse = authService.register(registerRequest);
-        return new ResponseEntity<>(registerResponse, HttpStatus.OK);
-    }
 
     @PostMapping("/verify-otp")
     public ResponseEntity<VerifyOtpResponse> verifyOtp(@RequestBody @Valid final VerifyOtpRequest verifyOtpRequest) {
